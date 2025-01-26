@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pinterest Clone</title>
+     <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<!-- Header -->
+<header>
+    <img src="https://upload.wikimedia.org/wikipedia/commons/0/08/Pinterest-logo.png" alt="Pinterest Logo">
+    <nav>
+        <a id="explore">Explore</a>
+        <div class="search-bar">
+            <input type="text" id="search-bar" placeholder="Search for ideas...">
+        </div>
+        <a id="signin">Sign In</a>
+        <a id="signup">Sign Up</a>
+        <a id="signout" style="display: none;">Sign Out</a>
+    </nav>
+</header>
+
+<!-- Main Content -->
+<div class="main-content" id="pins-container"></div>
+
+<!-- Footer -->
+<footer>
+    &copy; 2025 Pinterest Clone. All rights reserved.
+</footer>
+
+<!-- Sign In Modal -->
+<div id="signin-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('signin-modal')">×</button>
+        <h2>Sign In</h2>
+        <input type="email" id="signin-email" placeholder="Email" />
+        <input type="password" id="signin-password" placeholder="Password" />
+        <button onclick="signIn()">Sign In</button>
+    </div>
+</div>
+
+<!-- Sign Up Modal -->
+<div id="signup-modal" class="modal" style="display:none;">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('signup-modal')">×</button>
+        <h2>Sign Up</h2>
+        <input type="email" id="signup-email" placeholder="Email" />
+        <input type="password" id="signup-password" placeholder="Password" />
+        <button onclick="signUp()">Sign Up</button>
+    </div>
+</div>
+
+<!-- Image Modal -->
+<div class="modal" id="image-modal">
+    <div class="modal-content">
+        <button class="close-btn" onclick="closeModal('image')">×</button>
+        <button class="back-btn" onclick="goBackAction()">Go Back</button>
+        <img id="modal-image" src="" alt="Selected Pin">
+        <div id="modal-description"></div>
+        
+        <!-- Save and Share buttons -->
+        <div>
+            <button class="save-btn" onclick="saveImage()">Save</button>
+            <button class="share-btn" onclick="shareImage()">Share</button>
+        </div>
+
+        <div id="related-images"></div>
+    </div>
+</div>
+    <script src="script.js"></script>
+</body>
+</html>
